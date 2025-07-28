@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawGestor - Revolucione Seu Petshop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5CF6',
+                        secondary: '#EC4899',
+                        dark: '#1F2937',
+                        light: '#F9FAFB',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl">PG</div>
+                    <span class="ml-3 text-xl font-bold text-dark">PawGestor</span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-dark hover:text-primary transition-all">Funcionalidades</a>
+                    <a href="#how-it-works" class="text-dark hover:text-primary transition-all">Como Funciona</a>
+                    <a href="#pricing" class="text-dark hover:text-primary transition-all">Preços</a>
+                    <a href="#faq" class="text-dark hover:text-primary transition-all">FAQ</a>
+                </nav>
+                <button class="md:hidden text-dark">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div class="hidden md:block">
+                    <a href="#pricing" class="bg-primary hover:bg-purple-700 text-white px-6 py-2 rounded-full font-medium transition-all">Reserve Agora</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Revolucione Seu Petshop com o PawGestor</h1>
+                <p class="text-xl mb-8">A solução tudo-em-um para automatizar, gerenciar e escalar seu negócio pet com facilidade.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#pricing" class="bg-white text-primary px-8 py-3 rounded-full font-bold text-center hover:bg-gray-100 transition-all">Garantir Desconto</a>
+                    <a href="#features" class="border-2 border-white px-8 py-3 rounded-full font-bold text-center hover:bg-white hover:text-primary transition-all">Saiba Mais</a>
+                </div>
+                <div class="mt-8 flex items-center">
+                    <div class="flex -space-x-2">
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                        <img src="https://randomuser.me/api/portraits/men/1.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                        <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                    </div>
+                    <p class="ml-4">+100 petshops já reservaram</p>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center"> <!-- Adicionado flex justify-center para centralizar a imagem -->
+                <img src="https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dashboard PawGestor" class="rounded-lg shadow-2xl w-3/4 md:w-full max-w-md"> <!-- w-3/4 para mobile, max-w-md para limitar o tamanho -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Tudo que seu petshop precisa em um só lugar</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Automatize processos, economize tempo e aumente seus resultados com nossas soluções integradas.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition-all">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Bots de Comunicação</h3>
+                    <p class="text-gray-600">Automatize respostas em redes sociais, WhatsApp e e-mails com nossa tecnologia de IA que aprende com seu negócio.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition-all">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-store text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Multiplos Estabelecimentos</h3>
+                    <p class="text-gray-600">Gerencie todas suas filiais de um único painel, com relatórios individuais e consolidados.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition-all">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Relatórios Financeiros</h3>
+                    <p class="text-gray-600">Tomadas de decisão inteligentes com dados em tempo real sobre lucratividade, produtos mais vendidos e sazonalidade.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition-all">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-blog text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Blog Integrado</h3>
+                    <p class="text-gray-600">Crie posts sobre novidades do seu petshop sem precisar de conhecimentos técnicos, aumentando seu engajamento.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition-all">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Landing Page em 2 Minutos</h3>
+                    <p class="text-gray-600">Crie páginas de promoções e campanhas rapidamente com nosso construtor intuitivo e templates profissionais.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition-all">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-calendar-check text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Agendamento Simplificado</h3>
+                    <p class="text-gray-600">Sistema de agendamento que reduz em 80% as desistências com lembretes automáticos e confirmação em 1 clique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Como o PawGestor Transforma Seu Negócio</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Implementação rápida e resultados desde o primeiro dia</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-primary text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Cadastro Rápido</h3>
+                    <p class="text-gray-600">Crie sua conta em minutos e comece a configurar seu petshop no sistema.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-primary text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Integração Simples</h3>
+                    <p class="text-gray-600">Conecte suas redes sociais, agenda e sistemas de pagamento com facilidade.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-primary text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Treinamento Rápido</h3>
+                    <p class="text-gray-600">Nossa equipe te ensina tudo em uma única sessão de 30 minutos.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gray-50 rounded-xl p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dashboard" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <h3 class="text-2xl font-bold text-dark mb-4">Resultados Reais em 30 Dias</h3>
+                        <p class="text-gray-600 mb-6">Nossos clientes relatam em média:</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-1 rounded-full mr-4">
+                                    <i class="fas fa-check text-primary text-sm"></i>
+                                </div>
+                                <span class="text-gray-700"><strong>40% mais agendamentos</strong> com nosso sistema de lembretes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-1 rounded-full mr-4">
+                                    <i class="fas fa-check text-primary text-sm"></i>
+                                </div>
+                                <span class="text-gray-700"><strong>3 horas diárias economizadas</strong> na gestão do negócio</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-1 rounded-full mr-4">
+                                    <i class="fas fa-check text-primary text-sm"></i>
+                                </div>
+                                <span class="text-gray-700"><strong>25% mais vendas</strong> com as landing pages de promoções</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Oferta de Pré-Lançamento Exclusiva</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Garanta seu desconto vitalício antes do lançamento oficial</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-primary text-white p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-4">Pré-Venda com 50% OFF</h3>
+                        <p class="mb-6">Garanta agora acesso vitalício ao PawGestor pelo preço promocional de lançamento.</p>
+                        
+                        <div class="mb-8">
+                            <span class="text-5xl font-bold">R$175</span>
+                            <span class="text-xl">/mês</span>
+                            <p class="text-sm mt-2">Ficará R$350/mês para quem não aproveitar a oferta!</p>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-3 mt-1"></i>
+                                <span>Todas as funcionalidades inclusas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-3 mt-1"></i>
+                                <span>Suporte prioritário 24/7</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-3 mt-1"></i>
+                                <span>Atualizações gratuitas para sempre</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-3 mt-1"></i>
+                                <span>Garantia de 7 dias</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h3 class="text-2xl font-bold text-dark mb-6">Reserve Seu Acesso Hoje</h3>
+                        
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                            <p class="text-yellow-700"><strong>Oferta limitada:</strong> apenas 100 vagas disponíveis nesta pré-venda</p>
+                        </div>
+                        
+                        <!-- Formulário de Pré-Venda -->
+                        <form id="preSaleForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2">Nome Completo</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2">E-mail</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                            
+                            <div>
+                                <label for="petshop" class="block text-gray-700 mb-2">Nome do Seu Petshop</label>
+                                <input type="text" id="petshop" name="namePetshop" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-purple-700 text-white py-3 rounded-lg font-bold transition-all">
+                                Garantir Meu Desconto Vitalício
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 flex items-center">
+                            <i class="fas fa-lock text-gray-400 mr-2"></i>
+                            <span class="text-sm text-gray-500">Pagamento seguro processado por Mercado Pago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600">Precisa gerenciar múltiplos petshops? <a href="#" class="text-primary font-medium">Fale conosco</a> sobre nosso plano empresarial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">O que Donos de Petshop Dizem</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Depoimentos de nossos clientes beta</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"O sistema de agendamento reduziu nossas desistências pela metade. Os clientes amam a facilidade de marcar pelo WhatsApp."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full mr-4" alt="Ana">
+                        <div>
+                            <h4 class="font-bold text-dark">Ana Lúcia</h4>
+                            <p class="text-gray-500">Pet & Cia</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Finalmente posso ver o desempenho de todas minhas 5 lojas em um só lugar. Os relatórios financeiros são incríveis."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full mr-4" alt="Carlos">
+                        <div>
+                            <h4 class="font-bold text-dark">Carlos Eduardo</h4>
+                            <p class="text-gray-500">Super Pet</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Criei uma landing page para minha promoção de banho e tosa em 5 minutos. Resultado: 30% mais agendamentos!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full mr-4" alt="Fernanda">
+                        <div>
+                            <h4 class="font-bold text-dark">Fernanda Silva</h4>
+                            <p class="text-gray-500">Pet Mania</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Perguntas Frequentes</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Tire suas dúvidas sobre o PawGestor</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-6">
+                    <button class="w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="text-lg font-medium text-dark">Quando o PawGestor será lançado oficialmente?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-600">O lançamento oficial está previsto para 28 de agosto de 2025.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-6">
+                    <button class="w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="text-lg font-medium text-dark">Posso cancelar a qualquer momento?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-600">Sim, nosso plano não tem fidelidade. Você pode cancelar quando quiser, mas lembre-se que o preço promocional de R$175/mês só estará disponível durante esta pré-venda.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-6">
+                    <button class="w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="text-lg font-medium text-dark">O sistema funciona para petshops com apenas 1 unidade?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-600">Com certeza! O PawGestor foi projetado para petshops de todos os tamanhos. Mesmo com apenas uma unidade, você se beneficiará de todas as ferramentas de automação e gestão.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-6">
+                    <button class="w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="text-lg font-medium text-dark">Quais formas de pagamento aceitam?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-600">Aceitamos cartões de crédito (todas as bandeiras), Pix e boleto bancário. O pagamento é recorrente mensalmente no mesmo dia da contratação.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="text-lg font-medium text-dark">Preciso de conhecimento técnico para usar?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-600">Não! O PawGestor foi desenvolvido para ser intuitivo. Além disso, oferecemos treinamento personalizado e suporte prioritário para te ajudar em qualquer dúvida.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600">Não encontrou sua dúvida? <a href="#" class="text-primary font-medium">Fale conosco</a> e responderemos em até 2 horas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 hero-gradient text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para Transformar Seu Petshop?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Garanta agora seu desconto vitalício de 50% antes que as vagas se esgotem.</p>
+            <a href="#pricing" class="inline-block bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-all">Quero Economizar R$175/mês</a>
+            
+            <div class="mt-8 flex items-center justify-center">
+                <i class="fas fa-clock mr-2"></i>
+                <p>Oferta disponível por tempo limitado</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl">PG</div>
+                        <span class="ml-3 text-xl font-bold">PawGestor</span>
+                    </div>
+                    <p class="text-gray-400">A solução completa para gestão e crescimento do seu petshop.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Produto</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-all">Funcionalidades</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-all">Preços</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Depoimentos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Empresa</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Sobre Nós</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Carreiras</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                            <span>gabrield3vsilva@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-gray-400"></i>
+                            <span>(11) 98505-8988</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp mr-2 text-gray-400"></i>
+                            <span>(11) 98505-8988</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 PawGestor. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-all">Termos de Serviço</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-all">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ toggle functionality
+        document.querySelectorAll('#faq button').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const content = button.nextElementSibling;
+                
+                // Toggle the hidden class on the content
+                content.classList.toggle('hidden');
+                
+                // Rotate the icon
+                const icon = button.querySelector('i');
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Obter o formulário
+        const preSaleForm = document.getElementById('preSaleForm');
+
+        // Adicionar um event listener para o envio do formulário
+        preSaleForm.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Previne o comportamento padrão de envio do formulário
+
+            // Coletar os dados do formulário
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const namePetshop = document.getElementById('petshop').value;
+
+            // Criar o objeto de dados a ser enviado
+            const formData = {
+                name,
+                email,
+                namePetshop
+            };
+
+            try {
+                // Fazer a requisição POST para a rota /api/sale
+                const response = await fetch('http://localhost:3000/api/sale', { // Certifique-se de que esta URL corresponde ao seu servidor Express
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                // Obter o link de pagamento do Mercado Pago da resposta
+                const paymentLink = await response.text(); // Use .text() pois o servidor envia uma string pura
+
+                // Redirecionar o usuário para o link de pagamento
+                window.location.href = paymentLink;
+
+            } catch (error) {
+                console.error('Erro ao enviar o formulário ou obter link de pagamento:', error);
+                // Você pode adicionar uma mensagem de erro para o usuário aqui, se desejar
+                // Por exemplo: alert('Ocorreu um erro ao processar sua solicitação. Tente novamente.');
+            }
+        });
+    </script>
+</body>
+</html>
