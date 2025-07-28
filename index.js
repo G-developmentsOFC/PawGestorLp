@@ -45,6 +45,10 @@ const SaleByCheckout = async ( ) => {
     
 };
 
+app.post('/', async (req, res)=>{
+    return res.status(200).send('API is running');
+})
+
 app.post('/api/sale', async (req, res) => {
     const { name, email, namePetshop } = req.body;
 
