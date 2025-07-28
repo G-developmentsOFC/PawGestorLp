@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -6,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
-const MONGO_URI = 'mongodb://localhost:27017/pawgesstor';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/pawgestor';
 
 const { MercadoPagoConfig, Preference } = require('mercadopago');
 
@@ -21,7 +23,7 @@ const clientSchema = new mongoose.Schema({
 
 
 const SaleByCheckout = async ( ) => {
-    const client = new MercadoPagoConfig({ accessToken: 'APP_USR-4770553547466597-072715-39843db7d3252227afcb562cd9252c59-1840600103'});
+    const client = new MercadoPagoConfig({ accessToken: process.env.MERCADO_PAGO_ACCESS_TOKEN });
     
     const preference = new Preference(client);
     
